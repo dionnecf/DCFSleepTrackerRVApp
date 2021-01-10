@@ -67,5 +67,19 @@ class SleepNightAdapter : RecyclerView.Adapter<SleepNightAdapter.ViewHolder>(){
         val sleepLength: TextView = itemView.findViewById(R.id.sleep_length)
         val quality: TextView = itemView.findViewById(R.id.quality_string)
         val qualityImage: ImageView = itemView.findViewById(R.id.quality_image)
+
+        fun bind(item: SleepNight, res: Resources) {
+            sleepLength.text = com.example.android.trackmysleepquality.convertDurationToFormatted(item.startTimeMilli, item.endTimeMilli, res)
+            quality.text = com.example.android.trackmysleepquality.convertNumericQualityToString(item.sleepQuality, res)
+            qualityImage.setImageResource(when (item.sleepQuality) {
+                0 -> com.example.android.trackmysleepquality.R.drawable.ic_sleep_0
+                1 -> com.example.android.trackmysleepquality.R.drawable.ic_sleep_1
+                2 -> com.example.android.trackmysleepquality.R.drawable.ic_sleep_2
+                3 -> com.example.android.trackmysleepquality.R.drawable.ic_sleep_3
+                4 -> com.example.android.trackmysleepquality.R.drawable.ic_sleep_4
+                5 -> com.example.android.trackmysleepquality.R.drawable.ic_sleep_5
+                else -> com.example.android.trackmysleepquality.R.drawable.ic_sleep_active
+            })
+        }
     }
 }
