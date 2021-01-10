@@ -40,7 +40,6 @@ class SleepNightAdapter : ListAdapter<SleepNight, SleepNightAdapter.ViewHolder>(
 
     class ViewHolder private constructor(val binding: ListItemSleepNightBinding): RecyclerView.ViewHolder(binding.root) {
 
-        //bind function moved into ViewHolder to encapsulate it
         fun bind(item: SleepNight) {
             binding.sleep = item
             binding.executePendingBindings()
