@@ -37,7 +37,7 @@
 
         <!-- Simplest way of displaying scrollable text and data. There is a
              better and more efficient way to do this, and you will learn about
-             RecyclerView in a later lesson. -->
+             RecyclerView in a later lesson.-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sleep_list"
